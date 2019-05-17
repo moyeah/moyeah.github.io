@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/moyeah/static/css/main.e9639a40.chunk.css",
+    "main.js": "/moyeah/static/js/main.becb5fa4.chunk.js",
+    "main.js.map": "/moyeah/static/js/main.becb5fa4.chunk.js.map",
+    "runtime~main.js": "/moyeah/static/js/runtime~main.7e082c29.js",
+    "runtime~main.js.map": "/moyeah/static/js/runtime~main.7e082c29.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/moyeah/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.cda98a82.chunk.js": "/moyeah/static/js/2.cda98a82.chunk.js",
+    "static/js/2.cda98a82.chunk.js.map": "/moyeah/static/js/2.cda98a82.chunk.js.map",
+    "index.html": "/moyeah/index.html",
+    "precache-manifest.33149bae55fe06630bfd5c94d55e194f.js": "/moyeah/precache-manifest.33149bae55fe06630bfd5c94d55e194f.js",
+    "service-worker.js": "/moyeah/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/moyeah/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.e9639a40.chunk.css.map": "/moyeah/static/css/main.e9639a40.chunk.css.map",
+    "static/media/logo.svg": "/moyeah/static/media/logo.ee7cd8ed.svg"
+  }
+}
