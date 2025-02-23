@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponibilidade de Voluntariado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label,
+        input,
+        select {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Formulário de Disponibilidade para o Próximo Mês</h2>
+    <form id="availabilityForm">
+        <label for="name">Nome Completo:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="month">Mês:</label>
+        <select id="month" name="month" required>
+            <script>
+                let today = new Date();
+                let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+                document.write(`<option value="${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}">${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}</option>`);
+            </script>
+        </select>
+
+        <label for="days">Dias Disponíveis:</label>
+        <input type="text" id="days" name="days" placeholder="Exemplo: 1, 5, 10-15" required>
+
+        <label for="times">Horários Disponíveis:</label>
+        <select id="times" name="times" required>
+            <option value="manhã">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+            <option value="integral">Integral</option>
+        </select>
+
+        <input type="submit" value="Submeter">
+    </form>
+
+    <script>
+        document.getElementById('availabilityForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let month = document.getElementById('month').value;
+            let days = document.getElementById('days').value;
+            let times = document.getElementById('times').value;
+
+            let message = `Nome: ${name}%0AMês: ${month}%0ADias Disponíveis: ${days}%0AHorário: ${times}`;
+            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351XXXXXXXXX&text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
+            alert('Disponibilidade enviada via WhatsApp!');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
