@@ -60,14 +60,24 @@
         </select>
 
         <label for="days">Dias Disponíveis:</label>
-        <input type="text" id="days" name="days" placeholder="Exemplo: 1, 5, 10-15" required>
+        <input type="date" id="days" name="days" multiple>
+
+        <label for="holidays">Feriados:</label>
+        <input type="checkbox" id="holiday1" name="holidays" value="holiday1"> <label for="holiday1">Feriado
+            1</label><br>
+        <input type="checkbox" id="holiday2" name="holidays" value="holiday2"> <label for="holiday2">Feriado
+            2</label><br>
+        <input type="checkbox" id="holiday3" name="holidays" value="holiday3"> <label for="holiday3">Feriado
+            3</label><br>
 
         <label for="times">Horários Disponíveis:</label>
         <select id="times" name="times" required>
-            <option value="manhã">Manhã</option>
-            <option value="tarde">Tarde</option>
-            <option value="noite">Noite</option>
-            <option value="integral">Integral</option>
+            <option value="18h00">Segunda a Sexta às 18h00</option>
+            <option value="21h00">Segunda a Sexta às 21h00</option>
+            <option value="22h00">Segunda a Sexta às 22h00</option>
+            <option value="21h00_sab_dom">Sábado e Domingo às 21h00</option>
+            <option value="22h00_sab_dom">Sábado e Domingo às 22h00</option>
+            <option value="09h00_sab">Sábado às 9h00</option>
         </select>
 
         <input type="submit" value="Submeter">
@@ -80,9 +90,10 @@
             let month = document.getElementById('month').value;
             let days = document.getElementById('days').value;
             let times = document.getElementById('times').value;
+            let holidays = Array.from(document.querySelectorAll('input[name="holidays"]:checked')).map(e => e.labels[0].innerText).join(', ');
 
-            let message = `Nome: ${name}%0AMês: ${month}%0ADias Disponíveis: ${days}%0AHorário: ${times}`;
-            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351936641000&text=${message}`;
+            let message = `Nome: ${name}%0AMês: ${month}%0ADias Disponíveis: ${days}%0AFeriados: ${holidays}%0AHorário: ${times}`;
+            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351XXXXXXXXX&text=${message}`;
 
             window.open(whatsappUrl, '_blank');
             alert('Disponibilidade enviada via WhatsApp!');
