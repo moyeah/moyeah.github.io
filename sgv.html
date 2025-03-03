@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SGV</title>
+    <script type="text/javascript" src="/ruxitagentjs_ICA7NVfhqrux_10307250124095659.js"
+        data-dtconfig="rid=RID_2418|rpid=1428942411|domain=schneider-electric.com|reportUrl=/rb_bf45848ori|app=0acf5fa201565768|cuc=1s98jzr3|mel=100000|featureHash=ICA7NVfhqrux|md=mdcc1=a#dropdownMenuUser ^rb span|lastModification=1740381748032|tp=500,50,0|rdnt=1|uxrgce=1|agentUri=/ruxitagentjs_ICA7NVfhqrux_10307250124095659.js"></script>
+    <link rel="canonical" href="https://sgv.schneider-electric.com/" />
+    <link href="/Content/icon/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/Content/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/kendo.default.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/kendo.common.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/kendo.metro.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/kendo.dataviz.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/kendo.dataviz.metro.min.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/kendo.sgv.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/kendo/2016.3.1118/fonts/glyphs/KendoUIGlyphs.woff" type="application/font-woff2" rel="prefetch">
+    <link href="/Content/fonts/glyphicons-halflings-regular.woff" type="application/font-woff2" rel="prefetch">
+    <link href="/Content/fonts/glyphicons-halflings-regular.woff2" type="font/x-woff" rel="prefetch">
+    <link href="/Content/css/schneider-webfont-iconography.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/material-icons.css" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-bootstrap.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-sprites-flags.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-sprites-commentary.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-sprites-riskalert.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-sprites-statusassessment.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-sprites-stagegate.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-sprites-checklist.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/site-globaluser.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <link href="/Content/css/controls/MultiSelectBox.css?v=11.1.1.41035" type="text/css" rel="stylesheet">
+    <script src="/Scripts/kendo/2016.3.1118/jquery.min.js"></script>
+    <script src="/Scripts/kendo/2016.3.1118/jszip.min.js"></script>
+    <script src="/Scripts/kendo/2016.3.1118/kendo.all.min.js"></script>
+    <script src="/Scripts/kendo/2016.3.1118/kendo.aspnetmvc.min.js"></script>
+    <script src="/Scripts/kendo.modernizr.custom.js"></script>
+    <script src="/Scripts/kendo/2016.3.1118/Cultures/kendo.culture.en-US.min.js"></script>
+    <script src="/Scripts/kendo/2016.3.1118/Cultures/kendo.culture.fr-FR.min.js"></script>
+    <script src="/Scripts/kendo/2016.3.1118/Cultures/kendo.culture.en-GB.min.js"></script>
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" src="/Scripts/app/sgvApp.js?v=11.1.1.41035"></script>
+    <script>traceEnabled = false;</script>
+    <script>traceErrorEnabled = true;</script>
+    <script type="text/javascript" src="/Scripts/app/sgvResources.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/sgvWorkspace.js?v=11.1.1.41035" style="display:none;visibility:hidden;"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("if (workspace) workspace.init();");
+            if (workspace) workspace.init();
+            resizeMain();
+            if (workspace) workspace.resize();
+            $(window).resize(function () {
+                resizeMain();
+                if (workspace) workspace.resize();
+            });
+        });
+    </script>
+    <!--sgvApp.js-->
+    <!-- Load templates -->
+    <script type="text/javascript" src="/Scripts/app/components/templates.js?v=11.1.1.41035"></script>
+    <!-- Begin - Templates -->
+    <script type="text/kendo" id="FlagTemplate">
+    <span class='flag flag#=data.Code# pull-left'></span>
+    <span>#=data.Text#</span>
+</script>
+    <script type="text/javascript">
+        // Feature: Column templates
+        var kendoGridFlagTemplate = kendo.template($('#FlagTemplate').html(), { useWithBlock: false });
+    </script>
+    <script id="templateCheckedAll" type="text/kendo-tmpl">
+    <div class="mutliSelect" style="text-align:center;">
+        <input type="checkbox" checked="checked" disabled="disabled" />
+    </div>
+</script>
+    <script id="templateCheckedNothing" type="text/kendo-tmpl">
+    <div class="mutliSelect" style="text-align:center;">
+        <input type="checkbox" disabled="disabled" />
+    </div>
+</script>
+    <script id="templateAccessSGV" type="text/kendo-tmpl">
+    <div class="mutliSelect" style="text-align:center;">
+        <div data-wrap-group="SGV" data-wrap-parentid="#: ParentId #" data-wrap-id="#: Id #" class="#: cssParentWrapSGV #" >
+            # if (HasAccessSGV) { #
+            <input type="checkbox" value="#: AccessAttributeId #_#: OriginalId #" data-attributeid="#: AccessAttributeId #" data-originalid="#: OriginalId #" data-id="#: Id #" data-parentid="#: ParentId #" data-type="#: Type #" onchange="onCheckSGV(this, 'SGV')" checked="checked" class="HasAccessSGVGroup" id="chkHasAccessSGV#: Id #" />
+            # }  else { #
+            <input type="checkbox" value="#: AccessAttributeId #_#: OriginalId #" data-attributeid="#: AccessAttributeId #" data-originalid="#: OriginalId #" data-id="#: Id #" data-parentid="#: ParentId #" data-type="#: Type #" onchange="onCheckSGV(this, 'SGV')" class="HasAccessSGVGroup" id="chkHasAccessSGV#: Id #" />
+            # } #
+        </div>
+    </div>
+</script>
+    <script id="templateAccessRPT" type="text/kendo-tmpl">
+    <div class="mutliSelect" style="text-align:center;">
+        <div data-wrap-group="RPT" data-wrap-parentid="#: ParentId #" data-wrap-id="#: Id #" class="#: cssParentWrapRPT #">
+            # if (HasAccessRPT) { #
+            <input type="checkbox" value="#: AccessAttributeId #_#: OriginalId #" data-attributeid="#: AccessAttributeId #" data-originalid="#: OriginalId #" data-id="#: Id #" data-parentid="#: ParentId #" data-type="#: Type #" onchange="onCheck(this, 'RPT')" checked="checked" class="HasAccessRPTGroup" id="chkHasAccessRPT#: Id #" />
+            # }  else { #
+            <input type="checkbox" value="#: AccessAttributeId #_#: OriginalId #" data-attributeid="#: AccessAttributeId #" data-originalid="#: OriginalId #" data-id="#: Id #" data-parentid="#: ParentId #" data-type="#: Type #" onchange="onCheck(this, 'RPT')" class="HasAccessRPTGroup" id="chkHasAccessRPT#: Id #" />
+            # } #
+        </div>
+    </div>
+</script>
+    <script id="templateWBSColor" type="text/kendo-tmpl">
+    <div class="gridcell-forecast-category-#: Color #"></div>
+</script>
+    <script id="templateWBSMonthly" type="text/kendo-tmpl">
+    <div class="gridcell-numeric gridcell-present"><span></span>#: Name #</div>
+</script>
+    <script id="templateWBSHeaderName" type="text/kendo-tmpl">
+    <span>Name</span>
+</script>
+    <script id="templateWBSHeaderCost" type="text/kendo-tmpl">
+    <span>Actual Cost</span>
+</script>
+    <script id="templateWBSHeaderData" type="text/kendo-tmpl">
+    <span></span>
+</script>
+    <script id="templateWBSName" type="text/kendo-tmpl">
+    # if (Data != null && Data.Subcategory != null) { #
+    #=kendo.toString(Data.Subcategory)#
+    # } #
+    # if (IsTotal) { #
+    <div data-istotal="#: IsTotal #"></div>
+    # } #
+    # if (Level == 1) { #
+    <div data-level="#: Level #" data-category="#: Color #"></div>
+    # } #
+</script>
+    <script id="templateWBSCost" type="text/kendo-tmpl">
+    <div class="gridcell-numeric-autoWidth">
+        # if (Data != null && Data.ActualCost != null) { #
+        <span></span>#=kendo.toString(Data.ActualCost,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSFTC" type="text/kendo-tmpl">
+    <div class="gridcell-numeric-autoWidth">
+        # if (Data != null && Data.FTCCost != null) { #
+        <span></span>#=kendo.toString(Data.FTCCost,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_1" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_1 #">
+        # if (Data != null && Data.Data_1 != null) { #
+        <span></span>#=kendo.toString(Data.Data_1,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_2" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_2 #">
+        # if (Data != null && Data.Data_2 != null) { #
+        <span></span>#=kendo.toString(Data.Data_2,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_3" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_3 #">
+        # if (Data != null && Data.Data_3 != null) { #
+        <span></span>#=kendo.toString(Data.Data_3,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_4" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_4 #">
+        # if (Data != null && Data.Data_4 != null) { #
+        <span></span>#=kendo.toString(Data.Data_4,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_5" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_5 #">
+        # if (Data != null && Data.Data_5 != null) { #
+        <span></span>#=kendo.toString(Data.Data_5,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_6" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_6 #">
+        # if (Data != null && Data.Data_6 != null) { #
+        <span></span>#=kendo.toString(Data.Data_6,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSData_7" type="text/kendo-tmpl">
+    <div class="#: Data.DataType_7 #">
+        # if (Data != null && Data.Data_7 != null) { #
+        <span></span>#=kendo.toString(Data.Data_7,'n0')#
+        # } #
+    </div>
+</script>
+    <script id="templateWBSBeyond" type="text/kendo-tmpl">
+    <div class="gridcell-numeric-autoWidth">
+        # if (Data != null && Data.Beyond != null) { #
+        <span></span>#=kendo.toString(Data.Beyond,'n0')#
+        # } #
+    </div>
+</script>
+    <!-- End Templates -->
+    <!-- Legend Templates -->
+    <script type="text/kendo-tmpl" id="legendTemplate">
+    <div class="row">
+        <div class="col-xs-6 nopadding">
+            <div class="window-title">Legend</div>
+        </div>
+        <div class="col-xs-6 nopadding">
+            <div class="window-title">Override legend</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 nopadding">
+            <div class="window-title"></div>
+        </div>
+    </div>
+</script>
+    <script type="text/kendo-tmpl" id="legendTemplateForDashboardStageGateCPP">
+    <div class="row window-legends">
+        <div class="col-xs-6 nopadding">
+            <div class="window-title">Legend</div>
+            <div class="window-noboxed">
+                <div class="row">
+                    <div class="col-xs-10 nopadding">
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_1_UP" title="Not Set"></span>
+                            <span>Not Set</span>
+                        </div>
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_0_UP" title="Not Applicable"></span>
+                            <span>Not Applicable</span>
+                        </div>
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_3_UP" title="Legacy"></span>
+                            <span>Legacy</span>
+                        </div>
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_2_UP" title="Approved"></span>
+                            <span>Approved</span>
+                        </div>
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_4_UP" title="Warning"></span>
+                            <span>Warning</span>
+                        </div>
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_5_UP" title="Late"></span>
+                            <span>Late</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 nopadding">
+                        <div class="col-xs-2 text-center">
+                            <span id="imgNotSet" class="stageGate icon-cppStageGate_7_UP" title="Set"></span>
+                            <span>&nbsp;&nbsp;Set</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 nopadding v-line">
+            <div class="window-title">Override Legend</div>
+            <div class="window-noboxed">
+                <div class="col-xs-2 text-center">
+                    <span id="imgNotSet" class="stageGate icon-cppStageGateOverride_0_1" title="By Passed"></span>
+                    <span>By Passed</span>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <span id="imgNotSet" class="stageGate icon-cppStageGateOverride_1_0" title="Not Applicable"></span>
+                    <span>Not Applicable</span>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <span id="imgNotSet" class="stageGate icon-cppStageGateOverride_0_0" title="Not Set"></span>
+                    <span>Not Set</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+    <!-- End Legend templates -->
+    <script type="text/kendo-tmpl" id="legendTemplateForRiskAlertSummary.novisible">
+    <div class="row window-legends">
+        <div class="col-xs-6 nopadding">
+            <div class="window-title">Legend</div>
+            <div class="window-noboxed">
+                <div class="col-xs-12 row nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-green">LEVEL 0</label>
+                    </div>
+                    <div class="col-xs-9 text-left  nopadding">
+                        <div class="risk-legend">
+                            <label>No Perceived Risks</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 row nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-yellow">LEVEL 1</label>
+                    </div>
+                    <div class="col-xs-9 text-left nopadding">
+                        <div class="risk-legend">
+                            <label>Minor Risk</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 row nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-amber">LEVEL 2</label>
+                    </div>
+                    <div class="col-xs-9 text-left nopadding">
+                        <div class="risk-legend ">
+                            <label>Moderate Risk</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 nopadding v-line">
+            <div class="window-title">&nbsp;</div>
+            <div class="window-noboxed">
+                <div class="col-xs-12 row  nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-brown">LEVEL 3</label>
+                    </div>
+                    <div class="col-xs-9 text-left nopadding">
+                        <div class="risk-legend">
+                            <label>Significant Risk</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 row nopadding">
+                    <div class="col-xs-3 text-center  nopadding">
+                        <label class="risk-level-red">LEVEL 4</label>
+                    </div>
+                    <div class="col-xs-9 text-left nopadding">
+                        <div class="risk-legend">
+                            <label>Critical Risk</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+    <script type="text/kendo-tmpl" id="legendTemplateForEHSRiskCheckList">
+    <div class="row window-legends">
+        <div class="col-xs-12 nopadding">
+            <div class="window-title">Legend</div>
+        </div>
+        <div class="col-xs-4 nopadding">
+            <div class="window-noboxed">
+                <div class="row nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-red">RED</label>
+                    </div>
+                    <div class="col-xs-9 text-left  nopadding">
+                        <label class="risk-legend">Critical: Total Red > 1 or Total Amber > 5</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4 nopadding">
+            <div class="window-noboxed">
+                <div class="row nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-amber">AMBER</label>
+                    </div>
+                    <div class="col-xs-9 text-left  nopadding">
+                        <label class="risk-legend">Moderate: Total Red = 1 or Total Amber between 3 and 5</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4 nopadding">
+            <div class="window-noboxed">
+                <div class="row nopadding">
+                    <div class="col-xs-3 text-center nopadding">
+                        <label class="risk-level-green">GREEN</label>
+                    </div>
+                    <div class="col-xs-9 text-left  nopadding">
+                        <label class="risk-legend">Moderate: Total Red = 0 and Total Amber < 3 </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+    <script type="text/kendo-tmpl" id="legendTemplateForDashboardCommentary">
+    <div class="row window-legends">
+        <div class="col-xs-12 nopadding">
+            <div class="window-title">Legend</div>
+            <div class="window-noboxed">
+                <div class="row form-group">
+                    <div class="col-xs-3 ">
+                        <label class="legendCommentaryGreen">On track</label>
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="legendCommentaryYellow">Threat</label>
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="legendCommentaryRed">Alert</label>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-3">
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <i class="cssIndicatorLegend1"></i>
+                        </div>
+                        <div class="col-xs-8">
+                            <span style="line-height: 60px;">Unchanged</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <i class="cssIndicatorLegend2"></i>
+                        </div>
+                        <div class="col-xs-8">
+                            <span style="line-height: 60px;">Improvement</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <i class="cssIndicatorLegend3"></i>
+                        </div>
+                        <div class="col-xs-8">
+                            <span style="line-height: 60px;">Deterioration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+    <!-- Navigation bar templates -->
+    <script id="navigationBarTemplate" type="text/x-kendo-template">
+    <div class="link-bar">
+        <ul class="link-bar-items">
+            # for (var i = 0; i < data.options.length; i++) { #
+            # var firstItemCss = i==0? "link-bar-first": ""; #
+            # var lastItemCss = i==data.options.length-1? "link-bar-last": ""; #
+            # var activeItemCss = data.options[i].active? "link-bar-active": ""; #
+            # var itemCodeCss = data.options[i].code? ("link-bar-code-" + data.options[i].code) : ""; #
+            <!-- End Navigation bar templates -->
+            # var disabledItemCss = data.options[i].disabled? "k-state-disabled": ""; #
+            <li class="link-bar-item #= activeItemCss # #= firstItemCss # #= lastItemCss # #= disabledItemCss # #= itemCodeCss #" data-code="#=data.options[i].code#" data-index="#=data.options[i].index#">
+                # if (data.options[i].disabled) { #
+                 <span class="k-link" href="\\#" >#= data.options[i].title #</span>
+                # } else { #
+                <a class="k-link" href="\\#" onclick="#= data.options[i].action #">#= data.options[i].title #</a>
+                # } #
+            </li>
+            # } #
+        </ul>
+    </div>
+</script>
+    <!-- End Navigation bar templates -->
+    <script id="notificationInlineTemplate" type="text/x-kendo-template">
+    # var type = data.type; #
+    # var text = data.text; #
+    <div class="notification-msg #= type #">
+        <i class="icon-notification"></i>
+        <span class="notification-message-title">#= text #</span>
+    </div>
+</script>
+    <script id="commentList" type="text/x-kendo-template">
+    # for (var i = 0; i < data.options.length; i++) { #
+    <div class="window-comments">
+        <div class="col-xs-12">
+            <div class="window-comment-title">#= data.options[i].UpdateUserNameDisplayed #</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="window-comment-date">#= data.options[i].DateDisplayed #</div>
+            <div class="window-comment-time">#= data.options[i].TimeDisplayed #</div>
+        </div>
+        <div class="col-xs-12">
+            <p class="project-Commentary-defaultFontSize">
+                #= data.options[i].Text #
+            </p>
+        </div>
+    </div>
+    # } #
+</script>
+    <!--Template for grids -->
+    <script type="text/x-kendo-template" id="comboWithHistoricalDataDesactivatedTemplate">
+    <span class="# data.Disabled ? 'k-state-disabled sgv-comboItem-desactivated' : 'k-state-default sgv-comboItem-activated' #">
+        #: data.Text #
+    </span>
+</script>
+    <script type="text/javascript" src="/Scripts/app/sgvView.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/sgvReferenceData.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/utilities/exportexcel.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/controls/kendoMultiSelectBox.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/controls/loginInfo.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/controls/navigationBar.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/controls/gauge.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Scripts/app/controls/gridMenu.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Common/Scripts/KendoPopup.Index.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/Attachment.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/commentary.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/commentList.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/stageGateNavigationBar.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/riskAlertNavigationBar.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/rociNavigationBar.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Project/Scripts/app/controls/rociGcpNavigationBar.js?v=11.1.1.41035"></script>
+    <script type="text/javascript" src="/Areas/Admin/Scripts/app/controls/userProfileNavigationBar.js?v=11.1.1.41035"></script>
+</head>
+
+<body>
+    <input name="__ReleaseVersionHash" type="hidden" value="11.1.1.41035" />
+    <input name="__RequestVerificationToken" type="hidden"
+        value="yv4wLHHFvMyA0pIfFby8th3ujl8tJONaXJgShypAply01sc6eSnxOupTHwk9bbgZDfqUFGRAysmc7n_pc08raW4vRs-Ld8KTFmHFlCICOTiitgHZogmaP2q5CXuq-5DW0" />
+    <script type="text/javascript">
+        function sendAntiForgery() {
+            return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() }
+        };
+        $(document).ready(function () {
+            kendo.culture("en-GB");
+            var culture = kendo.culture();
+            culture.calendar.patterns.d = "dd MMM yyyy";
+            culture.calendar.patterns.D = "dd MMM yyyy";
+            culture.calendar.patterns.t = "HH:mm";
+            culture.calendar.patterns.T = "HH:mm";
+            culture.calendar.patterns.g = "dd MMM yyyy HH:mm";
+            culture.calendar.patterns.G = "dd MMM yyyy HH:mm";
+            culture.calendar.patterns.y = "MMMM, yyyy",
+                culture.calendar.patterns.Y = "MMMM, yyyy"
+        });
+    </script>
+    <header id="sgv-header" class="navbar navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" title="Home">Home</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div id="sgv-header-body" class="row form-group-grid">
+                <div id="header-body-part-title" class="pull-left col-xs-2 form-cell-grid">
+                    <div id="versionInfo" class="row form-group align-middle">
+                        <a class="vcenter" href="#" onclick="workspace.executeMenuOptionByCode('SgvViewVersion');">
+                            <span id="sgv-header-application-title" class="vcenter" data-toggle="tooltip"
+                                title="SGV2 11.1.1.41035">
+                                SGV
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div id="header-body-part-info" class="col-xs-7 form-cell-grid">
+                </div>
+                <div id="header-body-part-login" class="col-xs-3 pull-right">
+                    <div id="sgv-header-login">
+                        <div class="dropdown">
+                            <span class="icon-schneider_profile sgv-user-nonpa" aria-hidden="true">
+                                <span class="glyphicon-text">
+                                    <span class="sgv-with-delegation sgv-user-nonpa"></span>
+                                </span>
+                            </span>
+                            <a href="#" id="dropdownMenuUser" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="true">
+                                <span class="glyphicon-text"> Hello SOUSA, DANIEL!</span>
+                            </a>
+                            <div>
+                                <span class="validation-summary-errors small">
+                                </span>
+                            </div>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuUser">
+                                <li class="dropdown-submenu">
+                                    <a class="open-submenu" tabindex="-1" href="#">You are delegating projects <span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a tabindex="-1" href="#">ED13-PT-1070913146</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="workspace.executeMenuOption('MyUserProfile');">View My User
+                                        Profile</a></li>
+                                <li><hr role="separator" class="divider"></li>
+                                <li><a href="/Welcome/Signout"><i class="material-icons pull-right"
+                                            style="font-size: 18px; margin-right: 3px; position: relative;">exit_to_app</i>Sign
+                                        out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script>
+                        var userLoginInfo = new LoginInfoClass("#sgv-header-login");
+                    </script>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Security -->
+    <div id="sgv-sidebar" class="sgv-sidebar-collapsed">
+        <span id="sgv-sidebar-toggle" class="sgv-sidebar-collapsed"></span>
+        <div id="sgv-nav-wrapper">
+            <ul class="k-widget k-panelbar k-reset" id="panelbar">
+                <li class="k-item k-state-default menu-group menu-group-link" id="PortfolioView"><a
+                        class="k-link k-header" href="javascript:menu.showUseCase(&#39;PortfolioView&#39;)"><i
+                            class='material-icons'>folder</i>Portfolio<span
+                            class="k-icon k-i-arrow-s k-panelbar-expand"></span></a>
+                    <div class="k-content" id="panelbar-1" style="display:none">
+                        <div>
+                            <ul class="submenu"></ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="k-item k-state-default menu-group" id="ProjectDetails"><a class="k-link k-header"
+                        href="#panelbar-2"><i class='material-icons'>zoom_in</i>Project Details<span
+                            class="k-icon k-i-arrow-s k-panelbar-expand"></span></a>
+                    <div class="k-content" id="panelbar-2" class="hidden-content">
+                        <div>
+                            <ul class="submenu">
+                                <li id="menu-subitem-DashboardProjectInfo" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="DashboardProjectInfo"
+                                        class="k-link" sgv-data-urlAction="/Project/ProjectInfo/Index"
+                                        sgv-data-code="DashboardProjectInfo"
+                                        sgv-data-path="Project Details||Project Info"
+                                        onclick="showUseCase('DashboardProjectInfo');">Project Info</span></li>
+                                <li id="menu-subitem-DashboardCommentary" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="DashboardCommentary"
+                                        class="k-link" sgv-data-urlAction="/Project/ProjectCommentary/Index"
+                                        sgv-data-code="DashboardCommentary" sgv-data-path="Project Details||Commentary"
+                                        onclick="showUseCase('DashboardCommentary');">Commentary</span></li>
+                                <li id="menu-subitem-StatusAssessment" class="k-item k-state-default "
+                                    role="menuitem-group" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="StatusAssessment"
+                                        class="k-link sgv-menuoption-label-toggle">Status and Assessment</span><span
+                                        class="k-icon sgv-menuoption-toggle sgv-menuoption-collapsed k-i-expand"></span>
+                                    <ul class="submenu submenu-items" style="display:none">
+                                        <li id="menu-subitem-DashboardStatusAssessment-DashboardStatusAssessment"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2"><span id="DashboardStatusAssessment"
+                                                class="k-link"
+                                                sgv-data-urlAction="/Project/StatusAssessment/StatusAssessment_View"
+                                                sgv-data-code="DashboardStatusAssessment"
+                                                sgv-data-path="Project Details||Status and Assessment||Status & Assessment"
+                                                onclick="showUseCase('DashboardStatusAssessment');">Status & Assessment</span></li>
+                                        <li id="menu-subitem-RiskAlertSummary-RiskAlertSummary"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2"><span id="RiskAlertSummary" class="k-link"
+                                                sgv-data-urlAction="/Project/Riskalert/BlankPartial"
+                                                sgv-data-code="RiskAlertSummary"
+                                                sgv-data-path="Project Details||Status and Assessment||Risk Alert"
+                                                onclick="showUseCase('RiskAlertSummary');">Risk Alert</span></li>
+                                        <li id="menu-subitem-EHSRiskCheckList-EHSRiskCheckList"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="PA"><span
+                                                id="EHSRiskCheckList" class="k-link"
+                                                sgv-data-urlAction="/Project/EHSRisk/EHSRiskCheckList_View"
+                                                sgv-data-code="EHSRiskCheckList"
+                                                sgv-data-path="Project Details||Status and Assessment||EHS Checklist"
+                                                onclick="showUseCase('EHSRiskCheckList');">EHS Checklist</span></li>
+                                        <li id="menu-subitem-EHSRiskCheckListGCP-EHSRiskCheckListGCP"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="NonPA"><span
+                                                id="EHSRiskCheckListGCP" class="k-link"
+                                                sgv-data-urlAction="/Project/EHSRisk/GCP_EHSRiskCheckList_View"
+                                                sgv-data-code="EHSRiskCheckListGCP"
+                                                sgv-data-path="Project Details||Status and Assessment||EHS Checklist - GCP"
+                                                onclick="showUseCase('EHSRiskCheckListGCP');">EHS Checklist - GCP</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-subitem-DashboardStageGateCPP" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="DashboardStageGateCPP"
+                                        class="k-link" sgv-data-urlAction="/Project/StateGate/StateGateCPP_View"
+                                        sgv-data-code="DashboardStageGateCPP"
+                                        sgv-data-path="Project Details||Stage Gate – CPP"
+                                        onclick="showUseCase('DashboardStageGateCPP');">Stage Gate – CPP</span></li>
+                                <li id="menu-subitem-RociRiskLog" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="RociRiskLog"
+                                        class="k-link" sgv-data-urlAction="/Project/ROCIAndSCopeCM/BlankPartial"
+                                        sgv-data-code="RociRiskLog"
+                                        sgv-data-path="Project Details||ROCI & Scope Change Logs"
+                                        onclick="showUseCase('RociRiskLog');">ROCI & Scope Change Logs</span></li>
+                                <li id="menu-subitem-RociGcpRiskLog" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="RociGcpRiskLog"
+                                        class="k-link" sgv-data-urlAction="/Project/ROCIAndSCopeCM/BlankPartial"
+                                        sgv-data-code="RociGcpRiskLog"
+                                        sgv-data-path="Project Details||ROCI & Scope Change Logs"
+                                        onclick="showUseCase('RociGcpRiskLog');">ROCI & Scope Change Logs</span></li>
+                                <li id="menu-subitem-ProductivityMetricCapture" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span
+                                        id="ProductivityMetricCapture" class="k-link"
+                                        sgv-data-urlAction="/Project/ProductivityMetric/Index"
+                                        sgv-data-code="ProductivityMetricCapture"
+                                        sgv-data-path="Project Details||Productivity Metric Capture"
+                                        onclick="showUseCase('ProductivityMetricCapture');">Productivity Metric
+                                        Capture</span></li>
+                                <li id="menu-subitem-ProjectBilling" class="k-item k-state-default "
+                                    role="menuitem-group" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="ProjectBilling"
+                                        class="k-link sgv-menuoption-label-toggle">Project Billing</span><span
+                                        class="k-icon sgv-menuoption-toggle sgv-menuoption-collapsed k-i-expand"></span>
+                                    <ul class="submenu submenu-items" style="display:none">
+                                        <li id="menu-subitem-ProjectBilling-ProjectMilestones"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2"><span id="ProjectMilestones" class="k-link"
+                                                sgv-data-urlAction="/Project/UnbilledPOC/GetProjectSiteURL"
+                                                sgv-data-code="ProjectMilestones"
+                                                sgv-data-path="Project Details||Project Billing||Project Billing Milestones"
+                                                onclick="showUseCase('ProjectMilestones');">Project Billing
+                                                Milestones</span></li>
+                                        <li id="menu-subitem-ProjectBilling-ProjectSchedule"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="E2E"><span
+                                                id="ProjectSchedule" class="k-link"
+                                                sgv-data-urlAction="/Project/ProjectSchedule/Index"
+                                                sgv-data-code="ProjectSchedule"
+                                                sgv-data-path="Project Details||Project Billing||Payment Schedule"
+                                                onclick="showUseCase('ProjectSchedule');">Payment Schedule</span></li>
+                                        <li id="menu-subitem-ProjectBilling-CashCurve" class="k-item k-state-default "
+                                            role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                            sgv-data-entity="Project" sgv-data-entity-state="2"
+                                            sgv-data-entity-visibility="E2E"><span id="CashCurve" class="k-link"
+                                                sgv-data-urlAction="/Project/CashCurve/Index" sgv-data-code="CashCurve"
+                                                sgv-data-path="Project Details||Project Billing||Net Cash Curve"
+                                                onclick="showUseCase('CashCurve');">Net Cash Curve</span></li>
+                                        <li id="menu-subitem-ProjectBilling-UnbilledPOCDashboard"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="PA"><span
+                                                id="UnbilledPOCDashboard" class="k-link"
+                                                sgv-data-urlAction="/Project/UnbilledPOC/Index"
+                                                sgv-data-code="UnbilledPOCDashboard"
+                                                sgv-data-path="Project Details||Project Billing||Unbilled POC Dashboard"
+                                                onclick="showUseCase('UnbilledPOCDashboard');">Unbilled POC
+                                                Dashboard</span></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-subitem-Forecast" class="k-item k-state-default " role="menuitem-group"
+                                    sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                    sgv-data-entity-state="2"><span id="Forecast"
+                                        class="k-link sgv-menuoption-label-toggle">Forecast</span><span
+                                        class="k-icon sgv-menuoption-toggle sgv-menuoption-collapsed k-i-expand"></span>
+                                    <ul class="submenu submenu-items" style="display:none">
+                                        <li id="menu-subitem-ForecastProjectPnL-ForecastProjectPnL"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="NonPA"><span
+                                                id="ForecastProjectPnL" class="k-link"
+                                                sgv-data-urlAction="/Forecast/ProjectPnL/Index"
+                                                sgv-data-code="ForecastProjectPnL"
+                                                sgv-data-path="Project Details||Forecast||Project P&L"
+                                                onclick="showUseCase('ForecastProjectPnL');">Project P&L</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastClientOrder"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="PA"><span
+                                                id="ForecastClientOrder" class="k-link"
+                                                sgv-data-urlAction="/Forecast/ClientOrder/Index"
+                                                sgv-data-code="ForecastClientOrder"
+                                                sgv-data-path="Project Details||Forecast||Client Orders"
+                                                onclick="showUseCase('ForecastClientOrder');">Client Orders</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastCostPlanning"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="PA"><span
+                                                id="ForecastCostPlanning" class="k-link"
+                                                sgv-data-urlAction="/Forecast/CostPlanning/Index"
+                                                sgv-data-code="ForecastCostPlanning"
+                                                sgv-data-path="Project Details||Forecast||Cost Planning"
+                                                onclick="showUseCase('ForecastCostPlanning');">Cost Planning</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastCostPlanningNonPA"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="NonPA"><span
+                                                id="ForecastCostPlanningNonPA" class="k-link"
+                                                sgv-data-urlAction="/Forecast/CostPlanning/Index"
+                                                sgv-data-code="ForecastCostPlanningNonPA"
+                                                sgv-data-path="Project Details||Forecast||Cost Planning"
+                                                onclick="showUseCase('ForecastCostPlanningNonPA');">Cost Planning</span>
+                                        </li>
+                                        <li id="menu-subitem-Forecast-ForecastWBS" class="k-item k-state-default "
+                                            role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                            sgv-data-entity="Project" sgv-data-entity-state="3"
+                                            sgv-data-entity-visibility="PA"><span id="ForecastWBS" class="k-link"
+                                                sgv-data-urlAction="/Forecast/WBS/Index" sgv-data-code="ForecastWBS"
+                                                sgv-data-path="Project Details||Forecast||WBS"
+                                                onclick="showUseCase('ForecastWBS');">WBS</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastActualRevenueCostGM"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="PA"><span
+                                                id="ForecastActualRevenueCostGM" class="k-link"
+                                                sgv-data-urlAction="/Actual/RevenueCostGM/Index"
+                                                sgv-data-code="ForecastActualRevenueCostGM"
+                                                sgv-data-path="Project Details||Forecast||Actual Revenue/Cost/GM"
+                                                onclick="showUseCase('ForecastActualRevenueCostGM');">Actual
+                                                Revenue/Cost/GM</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastRevenueCostGM"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="PA"><span
+                                                id="ForecastRevenueCostGM" class="k-link"
+                                                sgv-data-urlAction="/Forecast/RevenueCostGM/Index"
+                                                sgv-data-code="ForecastRevenueCostGM"
+                                                sgv-data-path="Project Details||Forecast||Forecast Revenue/Cost/GM"
+                                                onclick="showUseCase('ForecastRevenueCostGM');">Forecast
+                                                Revenue/Cost/GM</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastRevenueCostGM"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="NonPA"><span
+                                                id="ForecastRevenueCostGM" class="k-link"
+                                                sgv-data-urlAction="/Forecast/RevenueCostGM/Index"
+                                                sgv-data-code="ForecastRevenueCostGM"
+                                                sgv-data-path="Project Details||Forecast||Forecast Revenue/Cost/GM"
+                                                onclick="showUseCase('ForecastRevenueCostGM');">Forecast
+                                                Revenue/Cost/GM</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastForecastToActual"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="PA"><span
+                                                id="ForecastForecastToActual" class="k-link"
+                                                sgv-data-urlAction="/Comparison/RevenueCostGM/Index"
+                                                sgv-data-code="ForecastForecastToActual"
+                                                sgv-data-path="Project Details||Forecast||Forecast to Actual Comparison"
+                                                onclick="showUseCase('ForecastForecastToActual');">Forecast to Actual
+                                                Comparison</span></li>
+                                        <li id="menu-subitem-Forecast-ForecastForecastToActualNonPA"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="3" sgv-data-entity-visibility="NonPA"><span
+                                                id="ForecastForecastToActualNonPA" class="k-link"
+                                                sgv-data-urlAction="/Comparison/RevenueCostGM/Index"
+                                                sgv-data-code="ForecastForecastToActualNonPA"
+                                                sgv-data-path="Project Details||Forecast||Forecast to Actual Comparison"
+                                                onclick="showUseCase('ForecastForecastToActualNonPA');">Forecast to
+                                                Actual Comparison</span></li>
+                                        <li id="menu-subitem-DashboardGMIForecast-DashboardGMIForecast"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2"><span id="DashboardGMIForecast" class="k-link"
+                                                sgv-data-urlAction="/Project/GMIForecast/GMIForecast_View"
+                                                sgv-data-code="DashboardGMIForecast"
+                                                sgv-data-path="Project Details||Forecast||GMI Forecast"
+                                                onclick="showUseCase('DashboardGMIForecast');">GMI Forecast</span></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-subitem-ExternalLinks" class="k-item k-state-default "
+                                    role="menuitem-group" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="ExternalLinks"
+                                        class="k-link sgv-menuoption-label-toggle">External Links</span><span
+                                        class="k-icon sgv-menuoption-toggle sgv-menuoption-collapsed k-i-expand"></span>
+                                    <ul class="submenu submenu-items" style="display:none">
+                                        <li id="menu-subitem-ProjectFiles-ProjectFiles" class="k-item k-state-default "
+                                            role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                            sgv-data-entity="Project" sgv-data-entity-state="2"><span id="ProjectFiles"
+                                                class="k-link" sgv-data-urlAction="/Project/Portfolio/BlankPartial"
+                                                sgv-data-code="ProjectFiles"
+                                                sgv-data-path="Project Details||External Links||Project Files"
+                                                onclick="showUseCase('ProjectFiles');">Project Files</span></li>
+                                        <li id="menu-subitem-PMW-PMW" class="k-item k-state-default "
+                                            role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                            sgv-data-entity="Project" sgv-data-entity-state="2"
+                                            sgv-data-entity-visibility="PA"><span id="PMW" class="k-link"
+                                                sgv-data-urlAction="/Project/ProjectFile/DownloadPMWExcelFile"
+                                                sgv-data-code="PMW" sgv-data-path="Project Details||External Links||PMW"
+                                                onclick="showUseCase('PMW');">PMW</span></li>
+                                        <li id="menu-subitem-ExternalLinks-ExternalLinksSiteCores"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="PA"><span
+                                                id="ExternalLinksSiteCores" class="k-link"
+                                                sgv-data-urlAction="/Project/ExternalLinks/Index"
+                                                sgv-data-code="ExternalLinksSiteCores"
+                                                sgv-data-path="Project Details||External Links||Site Request"
+                                                onclick="showUseCase('ExternalLinksSiteCores');">Site Request</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-subitem-ReviewRecords" class="k-item k-state-default "
+                                    role="menuitem-group" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="ReviewRecords"
+                                        class="k-link sgv-menuoption-label-toggle">Review Records</span><span
+                                        class="k-icon sgv-menuoption-toggle sgv-menuoption-collapsed k-i-expand"></span>
+                                    <ul class="submenu submenu-items" style="display:none">
+                                        <li id="menu-subitem-ActionTracker-ActionTracker"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2"><span id="ActionTracker" class="k-link"
+                                                sgv-data-urlAction="/Project/ActionTracker/Index"
+                                                sgv-data-code="ActionTracker"
+                                                sgv-data-path="Project Details||Review Records||Action Tracker"
+                                                onclick="showUseCase('ActionTracker');">Action Tracker</span></li>
+                                        <li id="menu-subitem-ReviewNotes-ReviewNotes" class="k-item k-state-default "
+                                            role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                            sgv-data-entity="Project" sgv-data-entity-state="2"><span id="ReviewNotes"
+                                                class="k-link" sgv-data-urlAction="/Project/Portfolio/BlankPartial"
+                                                sgv-data-code="ReviewNotes"
+                                                sgv-data-path="Project Details||Review Records||Review Notes"
+                                                onclick="showUseCase('ReviewNotes');">Review Notes</span></li>
+                                        <li id="menu-subitem-LessonIdentified-LessonIdentified"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="NonPA"><span
+                                                id="LessonIdentified" class="k-link"
+                                                sgv-data-urlAction="/Project/LessonIdentified/Index"
+                                                sgv-data-code="LessonIdentified"
+                                                sgv-data-path="Project Details||Review Records||Lesson Identified"
+                                                onclick="showUseCase('LessonIdentified');">Lesson Identified</span></li>
+                                        <li id="menu-subitem-LessonsIdentified-LessonsIdentified"
+                                            class="k-item k-state-default " role="menuitem-function"
+                                            sgv-data-defaultstate="k-state-default" sgv-data-entity="Project"
+                                            sgv-data-entity-state="2" sgv-data-entity-visibility="PA"><span
+                                                id="LessonsIdentified" class="k-link"
+                                                sgv-data-urlAction="/Project/LessonIdentified/BlankPartial"
+                                                sgv-data-code="LessonsIdentified"
+                                                sgv-data-path="Project Details||Review Records||Lessons Identified"
+                                                onclick="showUseCase('LessonsIdentified');">Lessons Identified</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="k-item k-state-default menu-group" id="ProjectSetup"><a class="k-link k-header"
+                        href="#panelbar-3"><i class='material-icons'>build</i>Project Setup<span
+                            class="k-icon k-i-arrow-s k-panelbar-expand"></span></a>
+                    <div class="k-content hidden-content" id="panelbar-3">
+                        <div>
+                            <ul class="submenu">
+                                <li id="menu-subitem-DashboardProjectIdentifiers" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state=""><span
+                                        id="DashboardProjectIdentifiers" class="k-link"
+                                        sgv-data-urlAction="/Project/ProjectIdentifiers/ProjectIdentifiers_View"
+                                        sgv-data-code="DashboardProjectIdentifiers"
+                                        sgv-data-path="Project Setup||Project Identifiers"
+                                        onclick="showUseCase('DashboardProjectIdentifiers');">Project Identifiers</span>
+                                </li>
+                                <li id="menu-subitem-DashboardContactDetails" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span
+                                        id="DashboardContactDetails" class="k-link"
+                                        sgv-data-urlAction="/Project/ContactDetails/Index"
+                                        sgv-data-code="DashboardContactDetails"
+                                        sgv-data-path="Project Setup||Contact Details"
+                                        onclick="showUseCase('DashboardContactDetails');">Contact Details</span></li>
+                                <li id="menu-subitem-DashboardCCO" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default"
+                                    sgv-data-entity="Project" sgv-data-entity-state="2"><span id="DashboardCCO"
+                                        class="k-link" sgv-data-urlAction="/Project/CCODashboard/CCODashboard_View"
+                                        sgv-data-code="DashboardCCO" sgv-data-path="Project Setup||CCO"
+                                        onclick="showUseCase('DashboardCCO');">CCO</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="k-item k-state-default menu-group" id="UserSettings"><a class="k-link k-header"
+                        href="#panelbar-4"><i class='material-icons'>settings</i>User Settings<span
+                            class="k-icon k-i-arrow-s k-panelbar-expand"></span></a>
+                    <div class="k-content" id="panelbar-4" style="display:none">
+                        <div>
+                            <ul class="submenu">
+                                <li id="menu-subitem-MyDefaultFilters" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default" sgv-data-entity=""
+                                    sgv-data-entity-state=""><span id="MyDefaultFilters" class="k-link"
+                                        sgv-data-urlAction="/Admin/UserPreferences/Index"
+                                        sgv-data-code="MyDefaultFilters"
+                                        sgv-data-path="User Settings||My Default Filters"
+                                        onclick="showUseCase('MyDefaultFilters');">My Default Filters</span></li>
+                                <li id="menu-subitem-MyUserProfile" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default" sgv-data-entity=""
+                                    sgv-data-entity-state=""><span id="MyUserProfile" class="k-link"
+                                        sgv-data-urlAction="/Admin/UserMaintenance/UserProfileTab_View"
+                                        sgv-data-code="MyUserProfile" sgv-data-path="User Settings||My User Profile"
+                                        onclick="showUseCase('MyUserProfile');">My User Profile</span></li>
+                                <li id="menu-subitem-UserDelegation" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default" sgv-data-entity=""
+                                    sgv-data-entity-state=""><span id="UserDelegation" class="k-link"
+                                        sgv-data-urlAction="/Admin/UserDelegation/Index" sgv-data-code="UserDelegation"
+                                        sgv-data-path="User Settings||My User Delegation"
+                                        onclick="showUseCase('UserDelegation');">My User Delegation</span></li>
+                                <li id="menu-subitem-AccessRequestPopup" class="k-item k-state-default "
+                                    role="menuitem-function" sgv-data-defaultstate="k-state-default" sgv-data-entity=""
+                                    sgv-data-entity-state=""><span id="AccessRequestPopup" class="k-link"
+                                        sgv-data-urlAction="/Project/Portfolio/BlankPartial"
+                                        sgv-data-code="AccessRequestPopup"
+                                        sgv-data-path="User Settings||Profile Modification Request"
+                                        onclick="showUseCase('AccessRequestPopup');">Profile Modification Request</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <script>
+                jQuery(function () { jQuery("#panelbar").kendoPanelBar({ "expandMode": "single" }); });
+            </script>
+            <script type="text/javascript" src="/Scripts/app/sgvMenu.js?v=11.1.1.41035"
+                style="display:none;visibility:hidden;"></script>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(window).resize(menu.resize);
+            menu.init();
+            console.log("$(document).ready(function () {$(window).resize(menu.resize); menu.init();");
+            menu.showUseCaseByCode("MySite");
+        });
+    </script>
+    <div id="main">
+        <div id="main-content-tab">
+            <div>
+                <ul id="main-workspace-tabs" class="nav nav-pills ">
+                    <li id="tab-home" class="pill-child workspace-tab-anchor workspace-tab-anchor-group-home"
+                        uuid="home">
+                        <a id="tab-lnk-home" data-toggle="pill" style="padding-left:0;padding-right:0;min-width:120px;"
+                            href="#workspace-element-home" uuid="294f1324-f153-464d-ba0f-6a6304629f77">
+                            <span id="tab-lnk-home_title" class="tab-lnk-title">Home</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-content-wrapper">
+            <div id="main-content-usecase">
+                <div id="main-workspace-modal" class=""></div>
+                <div class="tab-content floating-tab-content">
+                    <div id="workspace-element-home" class="view-container tab-pane" sgv-view-container-type="tabview"
+                        uuid="home"> </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("body").on("click", ".dropdown", calculatePositionForGridMenu);
+        </script>
+    </div>
+    <script id="messageTemplate" type="text/x-kendo-template">
+    <div class="notification-message">
+        <i class="icon-notification"></i>
+        <span class="notification-message-title">#= message #</span>
+        <i class="close" title="close"></i>
+    </div>
+</script>
+    <!--TOREMOVE-Legacy-->
+    <div id="Dialog">
+        <input type="hidden" id="hdIdDialog" />
+        <div data-role="dialog" id="dialog"></div>
+        <script>
+            jQuery(function () { jQuery("#dialog").kendoDialog({ "actions": [{ "text": "\u003cspan id=\u0027dialogButtonCancel\u0027\u003eCancel\u003c/span\u003e" }, { "text": "\u003cspan id=\u0027dialogButtonOK\u0027\u003eAccept\u003c/span\u003e", "primary": true }], "buttonLayout": "normal", "content": "\u003cspan id=\u0027dialogContent\u0027\u003eDo you want to delete the selected row?\u003c/span\u003e", "modal": true, "title": "Confirm", "visible": false, "width": 400 }); });
+        </script>
+    </div>
+    <div id="DialogYesNo">
+        <input type="hidden" id="hdIdDialogYesNo" />
+        <div data-role="dialog" id="dialogYesNo"></div>
+        <script>
+            jQuery(function () { jQuery("#dialogYesNo").kendoDialog({ "actions": [{ "text": "\u003cspan id=\u0027dialogYesNoButtonCancel\u0027\u003eNo\u003c/span\u003e" }, { "text": "\u003cspan id=\u0027dialogYesNoButtonOK\u0027\u003eYes\u003c/span\u003e", "primary": true }], "buttonLayout": "normal", "content": "\u003cspan id=\u0027dialogYesNoContent\u0027\u003eDo you want to delete the selected row?\u003c/span\u003e", "modal": true, "title": "Confirm", "visible": false, "width": 400 }); });
+        </script>
+    </div>
+    <div id="acceptDialog">
+    </div>
+    <script type="text/javascript" src="/Scripts/app/components/notification.js?v=11.1.1.41035"></script>
+    <script src="/bundles/bootstrap?v=6IRV4VKQKKj7rQYDPal6P8AS_rOTS74s88z_UiWEcvo1"></script>
+</body>
+
+</html>

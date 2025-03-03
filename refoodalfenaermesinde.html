@@ -93,7 +93,7 @@
             let holidays = Array.from(document.querySelectorAll('input[name="holidays"]:checked')).map(e => e.labels[0].innerText).join(', ');
 
             let message = `Nome: ${name}%0AMês: ${month}%0ADias Disponíveis: ${days}%0AFeriados: ${holidays}%0AHorário: ${times}`;
-            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351XXXXXXXXX&text=${message}`;
+            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351936641000&text=${message}`;
 
             window.open(whatsappUrl, '_blank');
             alert('Disponibilidade enviada via WhatsApp!');
