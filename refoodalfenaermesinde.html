@@ -41,7 +41,7 @@
         select {
             width: 100%;
             margin-bottom: 10px;
-            padding: 10px;
+            padding: 10px 0 10px 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -109,7 +109,7 @@
     <h2 style="text-align: center;">Formulário de Disponibilidade para o Próximo Mês</h2>
     <form id="availabilityForm">
         <label for="name">Nome Completo:</label>
-        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required style="">
+        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
 
         <label for="month">Mês:</label>
         <select id="month" name="month" required>
@@ -151,6 +151,13 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let today = new Date();
+            let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+            let monthSelect = document.getElementById('month');
+            monthSelect.innerHTML = `<option value="${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}">${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}</option>`;
+
+        });
         // Move the next month calculation here
         let today = new Date();
         let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
