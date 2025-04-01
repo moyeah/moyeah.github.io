@@ -1,0 +1,25 @@
+{
+  "short_name": "Refood",
+  "name": "Refood Alfena/Ermesinde",
+  "icons": [
+    {
+      "src": "/static/media/cropped-logorefood-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/media/cropped-logorefood-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/media/cropped-logorefood-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
