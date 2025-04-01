@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disponibilidade de Voluntariado</title>
+    <title>Refood Alfena/Ermesinde - Voluntárias/os</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
 
         form {
@@ -19,7 +24,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 500px;
-            margin: auto;
+            width: 100%;
         }
 
         label,
@@ -62,10 +67,11 @@
 </head>
 
 <body>
-    <div style="text-align: center; margin-bottom: 20px;">
-        <img src="RE-FOOD-logo-02.png" alt="RE-FOOD Logo" style="max-width: 200px;">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+        <img src="RE-FOOD-logo-02.png" alt="RE-FOOD Logo" style="max-width: 200px; margin-right: 20px;">
+        <h1 style="font-size: 1.5rem; text-align: left; margin: 0;">Refood Alfena/Ermesinde - Voluntárias/os</h1>
     </div>
-    <h2>Formulário de Disponibilidade para o Próximo Mês</h2>
+    <h2 style="text-align: center;">Formulário de Disponibilidade para o Próximo Mês</h2>
     <form id="availabilityForm">
         <label for="name">Nome Completo:</label>
         <input type="text" id="name" name="name" required>
@@ -100,6 +106,12 @@
 
         <input type="submit" value="Submeter">
     </form>
+
+    <footer style="margin-top: 20px; text-align: center;">
+        <a href="https://www.facebook.com/groups/293270051116948" target="_blank" style="text-decoration: none;">
+            <img src="facebook-icon.png" alt="Facebook" style="width: 40px; height: 40px;">
+        </a>
+    </footer>
 
     <script>
         // Move the next month calculation here
