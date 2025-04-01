@@ -41,6 +41,23 @@
         input[type="submit"]:hover {
             background: #218838;
         }
+
+        .date-container {
+            margin-bottom: 10px;
+        }
+
+        .add-date-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .add-date-btn:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 
@@ -52,23 +69,21 @@
 
         <label for="month">Mês:</label>
         <select id="month" name="month" required>
-            <script>
-                let today = new Date();
-                let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
-                document.write(`<option value="${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}">${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}</option>`);
-            </script>
         </select>
 
         <label for="days">Dias Disponíveis:</label>
-        <input type="date" id="days" name="days" multiple>
+        <div id="dateContainer" class="date-container">
+            <input type="date" name="days[]" required>
+        </div>
+        <button type="button" class="add-date-btn" id="addDateButton">Adicionar outro dia</button>
 
         <label for="holidays">Feriados:</label>
-        <input type="checkbox" id="holiday1" name="holidays" value="holiday1"> <label for="holiday1">Feriado
-            1</label><br>
-        <input type="checkbox" id="holiday2" name="holidays" value="holiday2"> <label for="holiday2">Feriado
-            2</label><br>
-        <input type="checkbox" id="holiday3" name="holidays" value="holiday3"> <label for="holiday3">Feriado
-            3</label><br>
+        <input type="checkbox" id="holiday1" name="holidays" value="holiday1"> 
+        <label for="holiday1">Feriado 1</label><br>
+        <input type="checkbox" id="holiday2" name="holidays" value="holiday2"> 
+        <label for="holiday2">Feriado 2</label><br>
+        <input type="checkbox" id="holiday3" name="holidays" value="holiday3"> 
+        <label for="holiday3">Feriado 3</label><br>
 
         <label for="times">Horários Disponíveis:</label>
         <select id="times" name="times" required>
@@ -84,16 +99,32 @@
     </form>
 
     <script>
+        // Move the next month calculation here
+        let today = new Date();
+        let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+        let monthSelect = document.getElementById('month');
+        monthSelect.innerHTML = `<option value="${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}">${nextMonth.toLocaleString('pt-PT', { month: 'long', year: 'numeric' })}</option>`;
+
+        // Add functionality to dynamically add date inputs
+        document.getElementById('addDateButton').addEventListener('click', function () {
+            let dateContainer = document.getElementById('dateContainer');
+            let newDateInput = document.createElement('input');
+            newDateInput.type = 'date';
+            newDateInput.name = 'days[]';
+            newDateInput.required = true;
+            dateContainer.appendChild(newDateInput);
+        });
+
         document.getElementById('availabilityForm').addEventListener('submit', function (event) {
             event.preventDefault();
             let name = document.getElementById('name').value;
             let month = document.getElementById('month').value;
-            let days = document.getElementById('days').value;
+            let days = Array.from(document.querySelectorAll('input[name="days[]"]')).map(input => input.value).join(', ');
             let times = document.getElementById('times').value;
             let holidays = Array.from(document.querySelectorAll('input[name="holidays"]:checked')).map(e => e.labels[0].innerText).join(', ');
 
-            let message = `Nome: ${name}%0AMês: ${month}%0ADias Disponíveis: ${days}%0AFeriados: ${holidays}%0AHorário: ${times}`;
-            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351936641000&text=${message}`;
+            let message = `Nome: ${name}\nMês: ${month}\nDias Disponíveis: ${days}\nFeriados: ${holidays}\nHorário: ${times}`;
+            let whatsappUrl = `https://api.whatsapp.com/send?phone=+351936641000&text=${encodeURIComponent(message)}`;
 
             window.open(whatsappUrl, '_blank');
             alert('Disponibilidade enviada via WhatsApp!');
